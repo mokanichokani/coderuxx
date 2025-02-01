@@ -11,45 +11,45 @@ import Link from 'next/link'
 const skillsData = [
   { 
     id: 1, 
-    name: 'Construction', 
-    description: 'The foundation of all creation begins here. Master the basics of building and learn to manipulate the fundamental elements of your world.',
+    name: 'Buy Stock I', 
+    description: 'Given an array of prices where prices[i] is the price of a stock on day i, find the maximum profit by choosing a single day to buy and a different day to sell. If no profit can be made, return 0.',
     requirements: 'Starting point'
   },
   { 
     id: 2, 
-    name: 'Layered', 
-    description: 'Discover the art of working with multiple layers. Learn to create complex structures by combining different materials and techniques.',
-    requirements: 'Requires: Construction'
+    name: 'Sell Stock I', 
+    description: 'Optimize the selling strategy to maximize profit from a single stock purchase. Ensure that the selling day is after the buying day.',
+    requirements: 'Requires: Buy Stock I'
   },
   { 
     id: 3, 
-    name: 'Mob Stacking', 
-    description: 'Harness the power of creatures in your world. Learn to control and stack mobs to create unique and powerful combinations.',
-    requirements: 'Requires: Layered'
+    name: 'Buy Stock II', 
+    description: 'You may complete as many transactions as you like (buy and sell multiple times). However, you must sell before you buy again.',
+    requirements: 'Requires: Sell Stock I'
   },
   { 
     id: 4, 
-    name: 'Construction II', 
-    description: 'Take your building skills to the next level. Master advanced techniques and learn to create intricate and awe-inspiring structures.',
-    requirements: 'Requires: Mob Stacking'
+    name: 'Sell Stock II', 
+    description: 'Optimize multiple buy-sell transactions to maximize cumulative profit while ensuring no overlapping trades.',
+    requirements: 'Requires: Buy Stock II'
   },
   { 
     id: 5, 
-    name: 'Layered II', 
-    description: 'Become a true master of layering. Learn to create complex, multi-dimensional structures that defy the laws of physics.',
-    requirements: 'Requires: Construction II'
+    name: 'Buy Stock III', 
+    description: 'You can complete at most two transactions (buy-sell pairs). Find the maximum profit that can be achieved with this constraint.',
+    requirements: 'Requires: Sell Stock II'
   },
   { 
     id: 6, 
-    name: 'Avalanche', 
-    description: 'Unlock the secrets of cascading forces. Learn to harness and control powerful chain reactions in your world.',
-    requirements: 'Requires: Layered II'
+    name: 'Sell Stock III', 
+    description: 'Determine the best two buy-sell transactions while considering transaction sequence constraints.',
+    requirements: 'Requires: Buy Stock III'
   },
   { 
     id: 7, 
-    name: 'Collision', 
-    description: 'Master the art of impact and interaction. Understand how forces collide and use this knowledge to shape your world in new ways.',
-    requirements: 'Requires: Avalanche'
+    name: 'Buy Stock IV', 
+    description: 'You are allowed to complete at most k transactions. Implement a strategy to maximize profit under this constraint.',
+    requirements: 'Requires: Sell Stock III'
   },
 ]
 
@@ -130,7 +130,8 @@ export default function SkillTree() {
           </p>
 
           {selectedSkill.id <= progress && progress < skillsData.length && (
-            <motion.button
+            <a target="_blank" rel="noopener noreferrer" href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/">
+              <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setProgress(prev => Math.min(prev + 1, skillsData.length))}
@@ -141,6 +142,7 @@ export default function SkillTree() {
               Unlock Next Level
               <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </motion.button>
+            </a>
           )}
 
           {progress >= skillsData.length && (
