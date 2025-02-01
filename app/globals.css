@@ -1,5 +1,5 @@
-//@ts-nocheck
-@tailwind base;
+
+@tailwind base;`
 @tailwind components;
 @tailwind utilities;
 @layer base {
