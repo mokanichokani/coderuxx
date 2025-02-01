@@ -3,7 +3,6 @@
 import { useState } from "react"
 import GameMap from "./components/GameMap"
 import CheckpointInfo from "./components/CheckpointInfo"
-import StarryBackground from "./components/StarryBackground"
 
 export default function CyberpunkGameMap() {
   const [selectedCheckpoint, setSelectedCheckpoint] = useState(null)
@@ -18,7 +17,6 @@ export default function CyberpunkGameMap() {
 
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4 relative overflow-hidden">
-      <StarryBackground />
       <h1 className="text-5xl font-bold mb-8 text-cyan-400 cyberpunk-text-glow z-10">Algorashtra</h1>
       <div className="relative z-10">
         <GameMap onCheckpointClick={handleCheckpointClick} />
