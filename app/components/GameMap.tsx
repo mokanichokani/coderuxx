@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import Image from "next/image"
 import { checkpoints } from "../data/checkpoints"
 

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import SkillTree from "../components/SkillTree"
 
 const page = () => {

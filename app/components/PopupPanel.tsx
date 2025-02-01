@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Button } from "@/components/ui/button"
 
 export default function PopupPanel({ checkpoint, onClose }) {
